@@ -11,9 +11,9 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.E. in Computer Engineering, Goa College of Engineering - Farmagudi, 2013
+* M.Tech. in Computer Science, Goa University, 2016
+* Ph.D Candidate at School of Computer Sciences, National Institute of Science Education and Research - Bhubaneswar, 2024 (expected)
 
 Work experience
 ======
