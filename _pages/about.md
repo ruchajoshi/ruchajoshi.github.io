@@ -8,8 +8,8 @@ profile:
   align: right
   image: prof_pic.jpg
   address: >
-    <p>MLAB, CC-03 Ground Floor</p>
-    <p>School of Computer Sciences</p>
+    <p>MLAB</p>
+    <p>Mathmatical Sciences Building</p>
     <p>NISER, Bhubaneswar</p>
 
 news: true  # includes a list of news items
