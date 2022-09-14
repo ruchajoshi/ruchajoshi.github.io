@@ -6,7 +6,7 @@ subtitle: ऋचा जोशी
 
 profile:
   align: right
-  image: prof_pic.jpeg
+  image: prof_pic.jpg
   address: >
     <p>MLAB, CC-03</p>
     <p>Mathmatical Sciences Building</p>
