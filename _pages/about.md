@@ -25,7 +25,9 @@ Put your address / P.O. box / other info right below your picture. You can also 
 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
 
-I am a researcher interested in Machine Learning, specifically Graph Representation Learning. I am also exploring the privacy in GRL models.
+I am a researcher interested in Machine Learning on Graphs. Currently, I am exploring the graph generation problem. I am also working on ensuring privacy in graph data.
+
+<!-- specifically Graph Representation Learning. I am also exploring the privacy in GRL models. -->
 
 Currently, I am a Ph.D. candidate at [School of Computer Sciences](https://www.niser.ac.in/scps/) at [National Institute of Science Education and Research](https://www.niser.ac.in/), Bhubaneswar, India,  advised by [Subhankar Mishra](http://www.niser.ac.in/~smishra/).
 
