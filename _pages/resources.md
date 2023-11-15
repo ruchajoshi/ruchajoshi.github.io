@@ -18,3 +18,7 @@ Pytorch
 Randomized Algorithms
 
 1. [CSL866: Randomized Algorithms, Sandeep Sen and Amitabha Bagchi](https://www.cse.iitd.ac.in/~bagchi/courses/CSL863_07-08/)
+
+Machine Learning
+
+1. [Understanding Deep Learning by Simon J.D. Prince ](https://udlbook.github.io/udlbook/)
