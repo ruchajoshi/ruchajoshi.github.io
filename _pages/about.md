@@ -29,7 +29,7 @@ I am a researcher interested in Machine Learning on Graphs. Currently, I am expl
 
 <!-- specifically Graph Representation Learning. I am also exploring the privacy in GRL models. -->
 
-Currently, I am a Ph.D. candidate at [School of Computer Sciences](https://www.niser.ac.in/scps/) at [National Institute of Science Education and Research](https://www.niser.ac.in/), Bhubaneswar, India,  advised by [Subhankar Mishra](http://www.niser.ac.in/~smishra/).
+I defended my Ph.D. thesis titled 'Graph Neural Networks: Privacy and Applications' in June 2024. I obtained my Ph.D. from [School of Computer Sciences](https://www.niser.ac.in/scps/) at [National Institute of Science Education and Research](https://www.niser.ac.in/), Bhubaneswar, India, and was advised by [Dr. Subhankar Mishra](http://www.niser.ac.in/~smishra/).
 
 
 Prior to this, I graduated from [Goa College of Engineering](http://www.gec.ac.in/) with a B.E. in Computer Engineering and [Goa University](https://www.unigoa.ac.in/) with a M.Tech in Computer Science.
