@@ -18,9 +18,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body style="font-family: 'EB Garamond', serif; font-size: 22px; line-height: 1.3;">
+<body style="font-family: 'Quattrocento', serif; font-size: 22px; line-height: 1.3;">
 
 
 <!-- Navigation -->
@@ -55,7 +55,7 @@
 
             <!-- Contact Info on the Sidebar -->
             <div class="col-md-4">
-                <div style="font-family: 'EB Garamond', serif; font-size: 32px;"><b>Rucha Joshi</b></div><br>
+                <div style="font-family: 'Quattrocento', serif; font-size: 32px;"><b>Rucha Joshi</b></div><br>
                 <img class="img-responsive" src="photo_rucha.jpeg" alt="" width="300"><br>
                 <p>email: r [dot] joshi [at] cyi [dot] ac [dot] cy<br>
                 <p>Computation-based Science and Technology Research Center (CaSToRC)<br>
@@ -73,8 +73,11 @@
               <dd><a href="https://www.linkedin.com/in/ruchajoshi11/">LinkedIn</a></dd>
               <dd><a href="https://github.com/ruchajoshi">GitHub</a></dd><br>
               <hr>
-              <p>Updated on August 27, 2024</p>
+              <!-- <p>Updated on August 27, 2024</p> -->
+              <div id="last-update">Last updated: </div>
             </div>
+
+            
 
             <!-- Entries Column -->
             <div class="col-md-8 main-content" style="height: 100vh;">
@@ -151,8 +154,22 @@
     <!-- /.container -->
     
   <!-- Other people may like it too! -->
-  <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">The template is by Vasilios Mavroudis. Thanks!</a> 
+  <a style="position: fixed; color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">The template is by Vasilios Mavroudis. Thanks!</a> 
     
+
+  <script>
+      // Get the last modified date of the document
+      const lastModified = new Date(document.lastModified);
+
+      // Options for date formatting
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+
+      // Format the date to a readable format like "August 27, 2024"
+      const formattedDate = lastModified.toLocaleDateString('en-US', options);
+
+      // Set the text content of the div to show the formatted last modified date
+      document.getElementById('last-update').textContent += formattedDate;
+  </script>
     
 </body>
 
