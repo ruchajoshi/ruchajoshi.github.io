@@ -1,196 +1,607 @@
 <!DOCTYPE html>
-<!--
-    Plain-Academic by Vasilios Mavroudis
-    Released under the Simplified BSD License/FreeBSD (2-clause) License.
-    https://github.com/mavroudisv/plain-academic
--->
-
 <html lang="en">
 <head>
-  <title>Rucha Joshi</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <!-- <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'> -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
-  <style>
-    body {
-      font-family: "Computer Modern Serif", serif;
-      font-size: 22px;
-      line-height: 1.3;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rucha Joshi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary:#2c3e50;
+  --accent:#4a90e2;
+  --bg:#f9f9f9;
+  --text:#333;
+}
+
+body.dark {
+  --primary:#ecf0f1;
+  --accent:#f0c674;
+  --bg:#121212;
+  --text:#e0e0e0;
+}
+
+body {
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:all .3s ease;
+  font-weight:300;
+}
+
+.container {max-width:850px;margin:auto;padding:2rem 1rem;}
+
+header {
+  display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1px solid #ddd;margin-bottom:2rem;
+}
+
+.profile {display:flex;gap:1rem;align-items:center;}
+.profile img {width:70px;height:70px;border-radius:50%;}
+
+nav a {margin-right:1rem;color:var(--accent);text-decoration:none;}
+
+.toggle {cursor:pointer;font-size:1.2rem;}
+
+section {margin-bottom:2rem;animation:fadeIn .6s ease;}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(10px);} 
+  to {opacity:1; transform:translateY(0);} 
+}
+
+h1 {font-weight:300;}
+
+.devanagari-name {
+  font-family:"Mukta", sans-serif;
+}
+
+h2 {border-bottom:1px solid #ddd;padding-bottom:0.3rem;font-weight:300;}
+
+.filters button {
+  margin-right:5px;padding:4px 8px;border-radius:6px;
+  border:1px solid #ccc;background:none;cursor:pointer;
+}
+
+body.dark .filters button {
+  color:var(--primary);
+  border-color:#555;
+  background:#1b1b1b;
+}
+
+.filters button.active {background:var(--accent);color:white;}
+
+#pub-list {margin-top:1rem;}
+
+.paper {
+  margin-bottom:12px;
+  cursor:pointer;
+  transition:all .2s ease;
+}
+
+.paper:hover {transform:translateX(4px);}
+
+.paper strong {font-weight:400;}
+
+.details {
+  display:none;
+  font-size:0.9rem;
+  color:#666;
+  margin-top:5px;
+}
+
+.actions {
+  margin-top:5px;
+}
+
+.actions a {
+  margin-right:8px;
+  font-size:0.8rem;
+  text-decoration:none;
+  color:var(--accent);
+  border:1px solid #ccc;
+  padding:2px 6px;
+  border-radius:4px;
+}
+
+.blog-post {
+  margin-bottom:1rem;
+  padding-bottom:0.5rem;
+  border-bottom:1px solid #eee;
+}
+
+.blog-post h3 {
+  margin:0;
+  font-size:1rem;
+}
+
+.blog-post p {
+  margin:5px 0 0;
+  font-size:0.9rem;
+  color:#666;
+}
+
+body.dark a {color:var(--accent);}
+
+.contact {color:#1a73e8;font-weight:300;text-decoration:none;}
+
+.whats-new-scroll {
+  max-height:14rem;
+  overflow-y:auto;
+  padding-right:0.75rem;
+  margin-top:1rem;
+}
+
+.whats-new-scroll::-webkit-scrollbar {
+  width:6px;
+}
+
+.whats-new-scroll::-webkit-scrollbar-track {
+  background:#f1f1f1;
+  border-radius:999px;
+}
+
+.whats-new-scroll::-webkit-scrollbar-thumb {
+  background:#c7c7c7;
+  border-radius:999px;
+}
+
+.whats-new-scroll::-webkit-scrollbar-thumb:hover {
+  background:#a8a8a8;
+}
+
+.whats-new-list {
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.whats-new-list li {
+  margin-bottom:0.5rem;
+  padding:0 0 0.5rem;
+  border-bottom:1px solid #e7e7e7;
+  font-size:0.92rem;
+  line-height:1.55;
+}
+
+.whats-new-list li:last-child {
+  margin-bottom:0;
+  padding-bottom:0;
+  border-bottom:none;
+}
+
+.whats-new-date {
+  display:inline-block;
+  min-width:8.5rem;
+  color:#666;
+  font-size:0.88rem;
+}
+
+body.dark .whats-new-list li {
+  border-bottom-color:#2c2c2c;
+}
+
+body.dark .whats-new-scroll::-webkit-scrollbar-track {
+  background:#1b1b1b;
+}
+
+body.dark .whats-new-scroll::-webkit-scrollbar-thumb {
+  background:#4b4b4b;
+}
+
+body.dark .whats-new-scroll::-webkit-scrollbar-thumb:hover {
+  background:#666;
+}
+
+body.dark .whats-new-date,
+body.dark .details,
+body.dark .blog-post p,
+body.dark footer {
+  color:#b3b3b3;
+}
+
+footer {text-align:center;font-size:0.8rem;color:#777;margin-top:2rem;}
+
+.last-updated {
+  margin-top:0.35rem;
+  font-size:0.75rem;
+}
+</style>
 </head>
 <body>
+<div class="container">
 
-
-<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-	  <div class="container">
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-		</div>
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav">
-				  <li><a href="/">Home</a></li>
-          <li><a href="#news">News</a></li>
-				  <li><a href="#publications">Publications</a></li> 
-          <li><a href="#teaching">Teaching</a></li>
-				  <!-- <li><a href="#">CV</a></li>  -->
-		  </ul>
-		</div>
-	  </div>
-	</nav>
-  
-  <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <!-- Contact Info on the Sidebar -->
-            <div class="col-md-4">
-                <div style="font-size: 32px;"><b>Rucha Joshi</b></div><br>
-                <img class="img-responsive" src="photo_rucha.jpeg" alt="" width="300"><br>
-                <p>email: r [dot] joshi [at] cyi [dot] ac [dot] cy<br>
-                <p>Computation-based Science and Technology Research Center (CaSToRC)<br>
-                The Cyprus Institute<br>
-                <!-- Street<br> -->
-                Nicosia <br>
-                Cyprus<br>
-                </p>
-            <!-- </div> -->
-
-            <!-- Links on the Sidebar -->
-            <!-- <div class="col-md-4" style="margin-top:2%"> -->
-              <dd><a href="https://scholar.google.com/citations?user=Xfxu5jQAAAAJ&hl=en">Google Scholar</a></dd> 
-              <dd><a href="https://x.com/_ruchajoshi">Twitter</a></dd>
-              <dd><a href="https://www.linkedin.com/in/ruchajoshi11/">LinkedIn</a></dd>
-              <dd><a href="https://github.com/ruchajoshi">GitHub</a></dd>
-              <dd><a href="https://orcid.org/0000-0003-1214-7985">ORCID</a></dd><br>
-              <hr>
-              <!-- <p>Updated on August 27, 2024</p> -->
-              <div id="last-update">Last updated: </div>
-            </div>
-
-            
-
-            <!-- Entries Column -->
-            <div class="col-md-8 main-content" style="height: 100vh;">
-                
-                <!-- Main Image -->
-                <!-- <img class="img-responsive" src="photo.gif" alt=""><br> -->
-              
-              <!-- Basic Information -->
-
-                <div style="margin-top:3%; text-align:justify;">      
-                  <p>Γειά σου!</p>          
-
-                  <p>I am a post-doctoral fellow at The Cyprus Institute, hosted by <a href="https://faculty.cc.gatech.edu/~dovrolis/">Prof. Constantine Dovrolis</a>. I graduated with a Ph.D. in Computer Science from National Institute of Science Education and Research, Bhubaneswar, India, and was advised by <a href="http://www.niser.ac.in/~smishra/">Dr. Subhankar Mishra</a>.</p>
-
-                  <p>Prior to this, I graduated from Goa College of Engineering with a B.E. in Computer Engineering and Goa University with a M.Tech in Computer Science.</p>
-
-                  <p>Currently, I am working on ML applications in medical imaging as part of the <a href="https://protect-prostate.eu">PROTECT project</a> funded by the European Union Recovery and Resilience Facility of the NextGenerationEU instrument, through the Research and Innovation Foundation, Cyprus.</p>
-
-                  <p>Recently, I am actively exploring the area of alignment of AI.</p>
-            
-                </div>
-            
-              <!-- News -->
-                <div style="padding: 10px; background-color: #f9f9f9;">
-                  <h3 id="news">Latest News</h3>
-                  <div style="height: 150px; overflow-y: auto; padding-right: 10px;">
-                    <p>2026, January: Our paper 'HetGSMOTE: Oversampling for Heterogeneous Graphs' accepted at NLDL 2026</p>
-                    <p>2025, September: Our paper 'Label Informativeness-based Minority Oversampling in Graphs (LIMO)' accepted at <a href="https://cyprusconferences.org/ickg2025/">16th ICKG 2025</a></p>
-                    <p>2025, February: Our paper 'Graph Neural Networks at a Fraction' accepted at PAKDD 2025</p>
-                    <p>2024, November: Our recent publication GraphPrivatizer accepted at <a href="https://logconference.org/schedule-posters/">LoG Conference</a> for poster presentation</p>
-                    <p>2024, November: Our paper 'Transformers at a fraction' accepted in NLDL 2025</p>
-                    <p>2024, August:Our paper titled 'GraphPrivatizer: Improved Structural Differential Privacy for Graph Neural Networks' accepted in TMLR</p>
-                    <p>2024, August: Joined The Cyprus Institute as a post-doctoral fellow</p>
-                    <p>2024, June: Defended my Ph.D. thesis successfully!</p>
-                    <p>2024, February: Attended the first edition of Pingala Interactions in Computing</p>
-                    <p>2023, November: Got selected to attend ACM India school on Algorithmic Foundations of Data Science at NISER in Dec 2023</p>
-                  </div>
-                </div>
-
-
-              <!-- Publications -->
-                <div style="margin-top: 20px;">    
-                    <h3 id="publications">Publications</h3>
-                    <ul>
-                      <li class="paper"><a href="https://openreview.net/forum?id=rLzas2xQGs#discussion">HetGSMOTE: Oversampling for Heterogeneous Graphs</a> - Adhilsha Ansad, Deependra Singh, <strong>Rucha Bhalchandra Joshi</strong>, and Subhankar Mishra, in NLDL 2026</li>
-                      <li class="paper"><a href="">Label Informativeness-based Minority Oversampling in Graphs (LIMO)</a> - Rishav Das, Sikta Mohanty, <strong>Rucha Bhalchandra Joshi</strong>, and Subhankar Mishra, in 16th ICKG 2025</li>
-                      <li class="paper"><a href="https://arxiv.org/abs/2502.06136">Graph Neural Networks at a Fraction</a> - <strong>Rucha Bhalchandra Joshi</strong>, Sagar Prakash Barad, Nidhi Tiwari, and Subhankar Mishra, in PAKDD 2025</li>
-                      <li class="paper"><a href="https://openreview.net/forum?id=1U0kkt7ymn#discussion">Transformers at a Fraction</a> - Aritra Mukhopadhyay, <strong>Rucha Bhalchandra Joshi</strong>, Nidhi Tiwari, and Subhankar Mishra, in NLDL 2025</li>
-                      <li class="paper"><a href="https://openreview.net/forum?id=lcPtUhoGYc">GraphPrivatizer: Improved Structural Differential Privacy for Graph Neural Networks</a> - <strong>Rucha Bhalchandra Joshi</strong><sup>*</sup>, Patrick Indri<sup>*</sup>, and Subhankar Mishra, in TMLR 2024</li>
-                      <li class="paper" words="GNN, WiFi-RSSI, indoor-localization"><a href="https://link.springer.com/chapter/10.1007/978-3-031-49601-1_11">IndoorGNN: A Graph Neural Network Based Approach for Indoor Localization Using WiFi RSSI</a> - Rahul Vishwakarma, <strong>Rucha Bhalchandra Joshi</strong>, and Subhankar Mishra, in the Eleventh International Conference on Big Data and Artificial Intelligence 2023</li>
-                      <li class="paper" words="Graph neural networks, differential privacy, GNN"><a href="https://dl.acm.org/doi/10.1145/3624485">Locally and Structurally Private Graph Neural Networks</a> - <strong>Rucha Bhalchandra Joshi</strong>, and Subhankar Mishra, in the Digital Threats, September 2023</li>
-                      <li class="paper"><a href="https://dl.acm.org/doi/10.1145/3539597.3572987">Graphs: Privacy and Generation through ML</a> - <strong>Rucha Bhalchandra Joshi</strong>, in WSDM 2023 Doctoral Consortium</li>
-                      <li class="paper"><a href="https://openreview.net/pdf?id=TU0UEnfcO88">Edge-level privacy in Graph Neural Networks</a> - <strong>Rucha Bhalchandra Joshi</strong> and Subhankar Mishra, in MLG Workshop at ECMLPKDD, 2022</li>
-                      <li class="paper"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9830484">eBIM-GNN : Fast and Scalable energy analysis through BIMs and Graph Neural Networks</a> - <strong>Rucha Bhalchandra Joshi</strong>, Annada Prasad Behera, and Subhankar Mishra, in ENERGYCON, 2022</li>
-                      <li class="paper"><a href="https://arxiv.org/abs/2111.09314">GAETS: A Graph Autoencoder Time Series Approach Towards Battery Parameter Estimation</a> - Edward Elson Kosasih, <strong>Rucha Bhalchandra Joshi</strong>, Janamejaya Channegowda in CoSubmitting Summer (CSS) Workshop at ICLR 2022 </li>
-                      <li class="paper"><a href="https://link.springer.com/chapter/10.1007/978-981-16-3398-0_10">Learning Graph Representations</a> -  <strong>Rucha Bhalchandra Joshi</strong> and Subhankar Mishra, in Principles of Social Networking, 2021</li>
-                      <li class="paper"><a href="">Temporal Motifs in Smart Grid</a>- <strong>Rucha Bhalchandra Joshi</strong>, Annada Prasad Behera, and Subhankar Mishra, in SMARTGREENS 2020</li>
-                  </ul>  
-                </div>
-
-              <!-- Teaching -->
-                <div style="margin-top: 20px;">
-                  <h3 id="teaching">Teaching</h3>
-                  <ul>
-                    <li>2024 Lead TA - CS460/660 : <a href="https://www.niser.ac.in/~smishra/teach/cs460/24cs460/">Machine Learning 2024</a></li>
-                    <li>2022 TA - CS 142 : <a href="https://sites.google.com/site/anupbtcs/comp-lab-ii-sp2022">Programming and Data Structures Lab - II</a></li>
-                    <li>2021 TA - CS 141 : <a href="https://sites.google.com/site/anupbtcs/comp-lab-i-2021-fall">Computational Laboratory - I</a></li>
-                  </ul>
-                </div>
-
-              <!-- Others -->
-                <div style="margin-top: 20px;">
-                  <h3 id="misc">Miscellaneous</h3>
-                  <ul>
-                    <li>Talk series: <a href="https://www.niser.ac.in/~smishra/event/cskathabarta/archive/2024.html">CS Katha Barta</a> (Feel free to email me if you would like to give a talk!)</li>
-                  </ul>
-                </div>
-
-            </div>
-  
-        </div>
-
-
+<header>
+  <div class="profile">
+    <img src="photo_rucha.jpeg" alt="Profile Photo">
+    <div>
+      <h1>Rucha Joshi · <span class="devanagari-name">ऋचा जोशी</span></h1>
+      <!-- <div>ऋचा जोशी</div> -->
+       <!-- <nav>
+          <a href="#about">About</a>
+          <a href="#publications">Publications</a>
+          <a href="#blog">Notes</a>
+          <a href="#teaching">Teaching</a>
+          <a href="#contact">Contact</a>
+        </nav> -->
     </div>
-    <!-- /.container -->
-    
-  <!-- Other people may like it too! -->
-  <a style="position: fixed; color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">The template is by Vasilios Mavroudis. Thanks!</a> 
-    
+  </div>
+  <div class="toggle" onclick="toggleDarkMode()" id="theme-toggle">🌙</div>
+</header>
 
-  <script>
-      // Get the last modified date of the document
-      const lastModified = new Date(document.lastModified);
 
-      // Options for date formatting
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
-      // Format the date to a readable format like "August 27, 2024"
-      const formattedDate = lastModified.toLocaleDateString('en-US', options);
+<section id="about">
+  <!-- <h2>About</h2> -->
+  <p>Γειά σου!</p>
+  <p>I am a post-doctoral fellow at The Cyprus Institute, hosted by <a href="https://faculty.cc.gatech.edu/~dovrolis/">Prof. Constantine Dovrolis</a>. I graduated with a Ph.D. in Computer Science from National Institute of Science Education and Research, Bhubaneswar, India, and was advised by <a href="http://www.niser.ac.in/~smishra/">Dr. Subhankar Mishra</a>.</p>
 
-      // Set the text content of the div to show the formatted last modified date
-      document.getElementById('last-update').textContent += formattedDate;
-  </script>
-    
+  <p>Prior to this, I graduated from Goa College of Engineering with a B.E. in Computer Engineering and Goa University with a M.Tech in Computer Science.</p>
+
+  <p>Currently, I am working on ML applications in medical imaging as part of the <a href="https://protect-prostate.eu">PROTECT project</a> funded by the European Union Recovery and Resilience Facility of the NextGenerationEU instrument, through the Research and Innovation Foundation, Cyprus.</p>
+
+  <!-- <p>Recently, I am actively exploring the area of alignment of AI.</p> -->
+</section>
+
+<section id="contact">
+  <!-- <h2>Contact</h2> -->
+  <a class="contact" href="https://scholar.google.com/citations?user=Xfxu5jQAAAAJ&hl=en">Google Scholar</a> ·
+  <a class="contact" href="https://x.com/_ruchajoshi">Twitter</a> ·
+  <a class="contact" href="https://www.linkedin.com/in/ruchajoshi11/">LinkedIn</a> ·
+  <a class="contact" href="https://github.com/ruchajoshi">GitHub</a> ·
+  <a class="contact" href="https://orcid.org/0000-0003-1214-7985">ORCID</a>
+</section>
+
+<section id="whats-new">
+  <h2>What's New</h2>
+
+  <div class="whats-new-scroll">
+    <ul class="whats-new-list">
+      <li><span class="whats-new-date">2026, January</span> Our paper "HetGSMOTE: Oversampling for Heterogeneous Graphs" was accepted at NLDL 2026.</li>
+      <li><span class="whats-new-date">2025, September</span> Our paper "Label Informativeness-based Minority Oversampling in Graphs (LIMO)" was accepted at <a href="https://cyprusconferences.org/ickg2025/">16th ICKG 2025</a>.</li>
+      <li><span class="whats-new-date">2025, February</span> Our paper "Graph Neural Networks at a Fraction" was accepted at PAKDD 2025.</li>
+      <li><span class="whats-new-date">2024, November</span> Our recent publication GraphPrivatizer was accepted at the <a href="https://logconference.org/schedule-posters/">LoG Conference</a> for poster presentation.</li>
+      <li><span class="whats-new-date">2024, November</span> Our paper "Transformers at a Fraction" was accepted at NLDL 2025.</li>
+      <li><span class="whats-new-date">2024, August</span> Our paper "GraphPrivatizer: Improved Structural Differential Privacy for Graph Neural Networks" was accepted in TMLR.</li>
+      <li><span class="whats-new-date">2024, August</span> Joined The Cyprus Institute as a post-doctoral fellow.</li>
+      <li><span class="whats-new-date">2024, June</span> Defended my Ph.D. thesis successfully.</li>
+      <li><span class="whats-new-date">2024, February</span> Attended the first edition of Pingala Interactions in Computing.</li>
+      <li><span class="whats-new-date">2023, November</span> Selected to attend the ACM India School on Algorithmic Foundations of Data Science at NISER in December 2023.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+
+  <div class="filters">
+    <button onclick="filterPubs('all')" class="active">All</button>
+    <button onclick="filterPubs('2026')">2026</button>
+    <button onclick="filterPubs('2025')">2025</button>
+    <button onclick="filterPubs('2024')">2024</button>
+    <button onclick="filterPubs('2023')">2023</button>
+    <button onclick="filterPubs('2022')">2022</button>
+    <button onclick="filterPubs('2021')">2021</button>
+  </div>
+  
+  <div id="pub-list"></div>
+</section>
+
+<!-- <section id="blog">
+  <h2>Research Notes</h2>
+
+  <div class="blog-post">
+    <h3>Understanding Transformers</h3>
+    <p>Quick notes on attention mechanisms and scaling laws.</p>
+  </div>
+
+  <div class="blog-post">
+    <h3>Paper Reading: XYZ</h3>
+    <p>Summary and critique of a recent paper.</p>
+  </div>
+</section> -->
+
+<section id="teaching">
+  <h2>Teaching</h2>
+
+  <ul>
+      <li>2024 Lead TA - CS460/660 : <a href="https://www.niser.ac.in/~smishra/teach/cs460/24cs460/">Machine Learning 2024</a></li>
+      <li>2022 TA - CS 142 : <a href="https://sites.google.com/site/anupbtcs/comp-lab-ii-sp2022">Programming and Data Structures Lab - II</a></li>
+      <li>2021 TA - CS 141 : <a href="https://sites.google.com/site/anupbtcs/comp-lab-i-2021-fall">Computational Laboratory - I</a></li>
+  </ul>
+</section>
+
+<section id="academic-service">
+  <h2>Academic Service</h2>
+
+  <ul>
+      <li>Organizer, <a href="http://www.niser.ac.in/~smishra/event/cskathabarta/index.html">CS Katha Barta</a> (recurring event)</li>
+      <li>Reviewer, SIGKDD Research Track 2026</li>
+      <li>Reviewer, ACML Journal Track 2025</li>
+      <li>Reviewer, ICLR 2025</li>
+      <li>Reviewer, NLDL 2025</li>
+      <li>Reviewer, IEEE Transactions on Information Forensics &amp; Security 2025</li>
+      <li>Reviewer, NeurReps Workshop 2024</li>
+      <li>Reviewer, IEEE Transactions on Information Forensics &amp; Security 2024</li>
+      <li>Organizer, <a href="https://sites.google.com/view/gclr2024/">GCLR 2024 Workshop at AAAI 2024</a></li>
+      <li>Volunteer, ACM India Annual Event 2024</li>
+      <li>Organizer, <a href="https://www.niser.ac.in/~smishra/event/phdpathanagosthi23/index.html">PhD Summer Reading Group 2023, NISER</a></li>
+      <li>Reviewer, NeurReps Workshop 2022</li>
+      <li>Volunteer, ICLR 2021</li>
+      <li>Volunteer, ICML 2021</li>
+      <li>Treasurer, Goa University ACM Student Chapter 2014-15</li>
+      <li>Volunteer, ACM India Annual Event 2015</li>
+      <li>Volunteer, ICON 2014</li>
+  </ul>
+</section>
+
+<footer>
+  <div>© Rucha Joshi 2026</div>
+  <div class="last-updated">Last updated on <span id="last-updated-date"></span></div>
+</footer>
+</div>
+
+<script>
+function updateThemeToggle() {
+  const toggle = document.getElementById('theme-toggle');
+  toggle.textContent = document.body.classList.contains('dark') ? '☀' : '🌙';
+}
+
+function toggleDarkMode(){
+  document.body.classList.toggle('dark');
+  updateThemeToggle();
+}
+
+function updateLastUpdatedDate() {
+  const updatedDate = new Date(document.lastModified);
+  const formattedDate = updatedDate.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+  document.getElementById('last-updated-date').textContent = formattedDate;
+}
+
+// ===== BibTeX AUTO PARSER =====
+const bibtex = `
+@inproceedings{joshi2026prostate,
+  author    = {Rucha Bhalchandra Joshi and Eleftherios Papageorgiou and Eleftherios Ioannou and Myrianthi Hadjicharalambous and Yiannis Roussakis and Georgios Anagnostopoulos and Iosif Strouthos and Constantinos Zamboglou and Constantine Dovrolis},
+  title     = {Prostate and Urethra Segmentation in Brachytherapy TRUS Images Using Parameter-Efficient MedSAM Fine-Tuning},
+  booktitle = {Proceedings of the IEEE International Symposium on Biomedical Imaging (ISBI)},
+  year      = {2026},
+  note      = {Poster}
+}
+
+@inproceedings{vishwakarma2023indoorgnn,
+  title={IndoorGNN: A graph neural network based approach for indoor localization using WiFi RSSI},
+  author={Vishwakarma, Rahul and Joshi, Rucha Bhalchandra and Mishra, Subhankar},
+  booktitle={International conference on big data analytics},
+  keywords={indoor localization, graph neural networks, WiFi RSSI},
+  pages={150--165},
+  year={2023},
+  organization={Springer},
+  pdf={https://link.springer.com/chapter/10.1007/978-3-031-49601-1_11},
+}
+
+@incollection{joshi2021learning,
+  title={Learning graph representations},
+  author={Joshi, Rucha Bhalchandra and Mishra, Subhankar},
+  booktitle={Principles of Social Networking: The New Horizon and Emerging Challenges},
+  keywords={graph representation learning, social networks},
+  abstract={Social and information networks are gaining huge popularity recently due to their various applications. Knowledge representation through graphs in the form of nodes and edges should preserve as many characteristics of the original data as possible. Some of the interesting and useful applications on these graphs are graph classification, node classification, link prediction, etc. The Graph Neural Networks have evolved over the last few years. Graph Neural Networks (GNNs) are efficient ways to get insight into large and dynamic graph datasets capturing relationships among billions of entities also known as knowledge graphs. In this paper, we discuss the graph convolutional neural networks graph autoencoders and spatio-temporal graph neural networks. The representations of the graph in lower dimensions can be learned using these methods. The representations in lower dimensions can be used further for downstream machine learning tasks.},
+  pages={209--228},
+  year={2021},
+  publisher={Springer}
+  pdf={https://link.springer.com/chapter/10.1007/978-981-16-3398-0_10},
+  doi={https://doi.org/10.1007/978-981-16-3398-0_10},
+}
+
+@inproceedings{Joshi2021TemporalMI,
+  title={Temporal Motifs in Smart Grid},
+  author={Rucha Bhalchandra Joshi and Annada Prasad Behera and Subhankar Mishra},
+  booktitle={International Conference on Smart Grids and Green IT Systems},
+  year={2021},
+  url={https://api.semanticscholar.org/CorpusID:219330140},
+  pdf={https://arxiv.org/abs/2102.01900}
+}
+
+@misc{
+kosasih2022gaets,
+title={GAETS: A Graph Autoencoder Time Series Approach Towards Battery Parameter Estimation},
+author={Edward Elson Kosasih and Rucha Bhalchandra Joshi and Janamejaya Channegowda},
+year={2022},
+url={https://openreview.net/forum?id=2z5h4hY-LQ},
+pdf={https://arxiv.org/abs/2111.09314}
+doi={https://doi.org/10.48550/arXiv.2111.09314}
+}
+
+@article{Joshi2022eBIMGNNFA,
+  title={eBIM-GNN Fast and Scalable energy analysis through BIMs and Graph Neural Networks},
+  author={Rucha Bhalchandra Joshi and Annada Prasad Behera and Subhankar Mishra},
+  journal={2022 IEEE 7th International Energy Conference (ENERGYCON)},
+  year={2022},
+  pages={1-8},
+  url={https://api.semanticscholar.org/CorpusID:248986929},
+  pdf={https://doi.org/10.1109/ENERGYCON53164.2022.9830484},
+  doi={10.1109/ENERGYCON53164.2022.9830484}
+
+}
+
+@inproceedings{joshi2022edge,
+  title={Edge-level privacy in graph neural networks},
+  author={Joshi, Rucha Bhalchandra and Mishra, Subhankar},
+  booktitle={18th International Workshop on Mining and Learning with Graphs},
+  year={2022},
+  pdf={https://openreview.net/forum?id=TU0UEnfcO88}
+}
+
+@inproceedings{joshi2023graphs,
+  title={Graphs: Privacy and generation through ML},
+  author={Joshi, Rucha Bhalchandra},
+  booktitle={Proceedings of the Sixteenth ACM International Conference on Web Search and Data Mining},
+  pages={1216--1217},
+  year={2023},
+  pdf={https://dl.acm.org/doi/10.1145/3539597.3572987}
+  doi={10.1145/3539597.3572987}
+}
+
+@article{joshi2024locally,
+  title={Locally and structurally private graph neural networks},
+  author={Joshi, Rucha Bhalchandra and Mishra, Subhankar},
+  journal={Digital Threats: Research and Practice},
+  volume={5},
+  number={1},
+  pages={1--23},
+  year={2024},
+  publisher={ACM New York, NY},
+  pdf={https://dl.acm.org/doi/10.1145/3624485},
+  doi={10.1145/3624485}
+}
+
+@article{joshi2024graphprivatizer,
+  title={GraphPrivatizer: Improved Structural Differential Privacy for Graph Neural Networks},
+  author={Joshi, Rucha Bhalchandra and Indri, Patrick and Mishra, Subhankar},
+  journal={Transactions on Machine Learning Research},
+  year={2024},
+  pdf={https://openreview.net/forum?id=lcPtUhoGYc}
+}
+
+@inproceedings{mukhopadhyay2025transformers,
+  title={Transformers at a fraction},
+  author={Mukhopadhyay, Aritra and Joshi, Rucha Bhalchandra and Tiwari, Nidhi and Mishra, Subhankar},
+  booktitle={Proceedings of the 6th Northern Lights Deep Learning Conference (NLDL)},
+  pages={193--203},
+  year={2025},
+  organization={PMLR},
+  pdf={https://proceedings.mlr.press/v265/mukhopadhyay25a.html}
+}
+
+@inproceedings{joshi2025graph,
+  title={Graph Neural Networks at a fraction},
+  author={Joshi, Rucha Bhalchandra and Barad, Sagar Prakash and Tiwari, Nidhi and Mishra, Subhankar},
+  booktitle={The 29th Pacific-Asia Conference on Knowledge Discovery and Data Mining},
+  year={2025},
+  pdf={https://dl.acm.org/doi/10.1007/978-981-96-8173-0_23},
+  doi={10.1007/978-981-96-8173-0_23}
+}
+
+@INPROCEEDINGS{11391783,
+  author={Das, Rishav and Mohanty, Sikta and Joshi, Rucha Bhalchandra and Mishra, Subhankar},
+  title={Label Informativeness-Based Minority Oversampling in Graphs (LIMO)}, 
+  booktitle={2025 IEEE International Conference on Knowledge Graph (ICKG)}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={35-42},
+  keywords={Accuracy;Correlation;Codes;Estimation;Knowledge graphs;Benchmark testing;Graph neural networks;Computational efficiency;Reliability;Mutual information;graph neural networks;class imbalance;oversampling;label informativeness;node classification},
+  doi={10.1109/ICKG66886.2025.00012}
+  pdf={https://www.computer.org/csdl/proceedings-article/ickg/2025/668900a035/2eqaMSgXRnO}
+}
+
+@InProceedings{pmlr-v307-ansad26a,
+  title = 	 {HetGSMOTE: Oversampling for Heterogeneous Graphs},
+  author =       {Ansad, Adhilsha and Singh, Deependra and Joshi, Rucha Bhalchandra and Mishra, Subhankar},
+  booktitle = 	 {Proceedings of the 7th Northern Lights Deep Learning Conference (NLDL)},
+  pages = 	 {1--14},
+  year = 	 {2026},
+  editor = 	 {Kim, Hyeongji and Ramírez Rivera, Adín and Ricaud, Benjamin},
+  volume = 	 {307},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {06--08 Jan},
+  publisher =    {PMLR},
+  url = 	 {https://raw.githubusercontent.com/mlresearch/v307/main/assets/ansad26a/ansad26a.pdf},
+  pdf = 	 {https://proceedings.mlr.press/v307/ansad26a.html},
+  abstract = 	 {Graph Neural Networks (GNNs) have proven effective for learning from graph structured data, with heterogeneous graphs (HetGs) gaining particular prominence for their ability to model diverse real world systems through multiple node and edge types. However, class imbalance where certain node classes are significantly underrepresented presents a critical challenge for node classification tasks on HetGs, as traditional learning approaches fail to adequately handle minority classes. This work introduces HetGSMOTE, a novel oversampling framework that extends SMOTE-based techniques to heterogeneous graph settings by systematically incorporating node-type, edge-type, and metapath information into the synthetic sample generation process. HetGSMOTE operates by constructing a content-aggregated and neighbor-type-aggregated embedding space through a base model, then generating synthetic minority nodes while training specialized edge generators for each node type to preserve essential relational structures. Through comprehensive experiments across multiple benchmark datasets and base models, we demonstrate that HetGSMOTE consistently outperforms existing baseline methods, achieving substantial improvements in classification performance under various imbalance scenarios, particularly in extreme imbalance cases while maintaining broad compatibility across different heterogeneous graph neural network architectures. We release our code and data preparations at [github.com/smlab-niser/hetgsmote](https://github.com/smlab-niser/hetgsmote).}
+}
+
+
+`;
+
+function parseBibtex(text){
+  const entries = text.split('@').slice(1);
+  return entries.map(e=>{
+    const get = field => {
+      const match = e.match(new RegExp(field+"\\s*=\\s*[{](.*?)[}]", 's'));
+      return match ? match[1] : '';
+    };
+    return {
+      title:get('title'),
+      author:get('author'),
+      year:get('year'),
+      booktitle:get('booktitle'),
+      topic:get('keywords'),
+      abstract:get('abstract'),
+      pdf:get('pdf'),
+      doi:get('doi')
+    };
+  });
+}
+
+const papers = parseBibtex(bibtex);
+
+function normalizeLink(value, type) {
+  const trimmedValue = value.trim();
+
+  if (!trimmedValue) {
+    return '';
+  }
+
+  if (type === 'doi' && !/^https?:\/\//i.test(trimmedValue)) {
+    return `https://doi.org/${trimmedValue}`;
+  }
+
+  return trimmedValue;
+}
+
+function renderPubs(filter='all'){
+  const container = document.getElementById('pub-list');
+  container.innerHTML='';
+
+  // Sort papers by year in reverse chronological order
+  const sortedPapers = [...papers].sort((a, b) => parseInt(b.year) - parseInt(a.year));
+
+  sortedPapers.forEach(p=>{
+    if(filter!=='all' && p.year!==filter && p.topic!==filter) return;
+
+    const pdfLink = normalizeLink(p.pdf, 'pdf');
+    const doiLink = normalizeLink(p.doi, 'doi');
+    const actionLinks = [
+      pdfLink ? `<a href="${pdfLink}" target="_blank">PDF</a>` : '',
+      doiLink ? `<a href="${doiLink}" target="_blank">DOI</a>` : ''
+    ].filter(Boolean).join('');
+
+    const div = document.createElement('div');
+    div.className='paper';
+    div.innerHTML=`
+      <strong>${p.title}</strong><br>
+      <span>${p.author} · ${p.year}</span>
+      ${p.booktitle ? '<br><em>' + p.booktitle + '</em>' : ''}
+      ${actionLinks ? `<div class="actions">${actionLinks}</div>` : ''}
+      <div class="details">${p.abstract}</div>
+    `;
+
+    div.onclick = (e)=>{
+      if(e.target.tagName==='A') return;
+      const d = div.querySelector('.details');
+      d.style.display = d.style.display==='block' ? 'none':'block';
+    };
+
+    container.appendChild(div);
+  });
+}
+
+function filterPubs(filter){
+  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderPubs(filter);
+}
+
+renderPubs();
+updateThemeToggle();
+updateLastUpdatedDate();
+</script>
+
 </body>
-
 </html>
