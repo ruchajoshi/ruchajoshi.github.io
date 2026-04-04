@@ -60,6 +60,26 @@ h1 {font-weight:300;}
 
 h2 {border-bottom:1px solid #ddd;padding-bottom:0.3rem;font-weight:300;}
 
+.research-summary {
+  margin-bottom:0.85rem;
+  /* line-height:1.55; */
+  font-weight:300;
+}
+
+.research-interest-list {
+  margin:0;
+  padding-left:1.2rem;
+}
+
+.research-interest-list li {
+  margin-bottom:0.35rem;
+  line-height:1.55;
+}
+
+.research-interest-list strong {
+  font-weight:300;
+}
+
 .filters button {
   margin-right:5px;padding:4px 8px;border-radius:6px;
   border:1px solid #ccc;background:none;cursor:pointer;
@@ -245,6 +265,16 @@ footer {text-align:center;font-size:0.8rem;color:#777;margin-top:2rem;}
   <!-- <p>Recently, I am actively exploring the area of alignment of AI.</p> -->
 </section>
 
+<section id="research-interests">
+  <h2>Research Interests</h2>
+  <p class="research-summary">I work on graph machine learning, privacy-preserving AI, and efficient deep learning, with applications in sensing, energy, and medical imaging.</p>
+  <ul class="research-interest-list">
+    <li><strong>Graph ML:</strong> graph representation learning, GNNs, and heterogeneous graphs.</li>
+    <li><strong>Private and trustworthy AI:</strong> differential privacy and robust learning on graph data.</li>
+    <li><strong>Efficient ML systems:</strong> compact models and parameter-efficient adaptation for real-world applications.</li>
+  </ul>
+</section>
+
 <section id="contact">
   <!-- <h2>Contact</h2> -->
   <a class="contact" href="https://scholar.google.com/citations?user=hjt6zjgAAAAJ&hl=en">Google Scholar</a> ·
@@ -259,6 +289,7 @@ footer {text-align:center;font-size:0.8rem;color:#777;margin-top:2rem;}
 
   <div class="whats-new-scroll">
     <ul class="whats-new-list">
+      <li><span class="whats-new-date">2026, April</span> Our paper "Compositional Novelty Metrics for Graph-Structured Data" is accepted at ICPR 2026.</li>
       <li><span class="whats-new-date">2026, January</span> Our paper "HetGSMOTE: Oversampling for Heterogeneous Graphs" was accepted at NLDL 2026.</li>
       <li><span class="whats-new-date">2025, September</span> Our paper "Label Informativeness-based Minority Oversampling in Graphs (LIMO)" was accepted at <a href="https://cyprusconferences.org/ickg2025/">16th ICKG 2025</a>.</li>
       <li><span class="whats-new-date">2025, February</span> Our paper "Graph Neural Networks at a Fraction" was accepted at PAKDD 2025.</li>
@@ -366,10 +397,18 @@ function updateLastUpdatedDate() {
 
 // ===== BibTeX AUTO PARSER =====
 const bibtex = `
+@inproceedings{joshi2026compositional,
+  author    = {Rucha Bhalchandra Joshi and Subhankar Mishra}
+  title     = {Compositional Novelty Metrics for Graph-Structured Data},
+  booktitle = {28th International Conference on Pattern Recognition (ICPR 2026)},
+  year      = {2026},
+  note      = {Poster}
+}
+
 @inproceedings{joshi2026prostate,
   author    = {Rucha Bhalchandra Joshi and Eleftherios Papageorgiou and Eleftherios Ioannou and Myrianthi Hadjicharalambous and Yiannis Roussakis and Georgios Anagnostopoulos and Iosif Strouthos and Constantinos Zamboglou and Constantine Dovrolis},
   title     = {Prostate and Urethra Segmentation in Brachytherapy TRUS Images Using Parameter-Efficient MedSAM Fine-Tuning},
-  booktitle = {Proceedings of the IEEE International Symposium on Biomedical Imaging (ISBI)},
+  booktitle = {IEEE International Symposium on Biomedical Imaging (ISBI 2026)},
   year      = {2026},
   note      = {Poster}
 }
@@ -377,7 +416,7 @@ const bibtex = `
 @inproceedings{vishwakarma2023indoorgnn,
   title={IndoorGNN: A graph neural network based approach for indoor localization using WiFi RSSI},
   author={Vishwakarma, Rahul and Joshi, Rucha Bhalchandra and Mishra, Subhankar},
-  booktitle={International conference on big data analytics},
+  booktitle={International Conference on Big Data Analytics (BDA 2023)},
   keywords={indoor localization, graph neural networks, WiFi RSSI},
   pages={150--165},
   year={2023},
@@ -401,7 +440,7 @@ const bibtex = `
 @inproceedings{Joshi2021TemporalMI,
   title={Temporal Motifs in Smart Grid},
   author={Rucha Bhalchandra Joshi and Annada Prasad Behera and Subhankar Mishra},
-  booktitle={International Conference on Smart Grids and Green IT Systems},
+  booktitle={International Conference on Smart Grids and Green IT Systems (SMARTGREENS 2021)},
   year={2021},
   url={https://api.semanticscholar.org/CorpusID:219330140},
   pdf={https://arxiv.org/abs/2102.01900}
@@ -420,7 +459,7 @@ doi={https://doi.org/10.48550/arXiv.2111.09314}
 @article{Joshi2022eBIMGNNFA,
   title={eBIM-GNN Fast and Scalable energy analysis through BIMs and Graph Neural Networks},
   author={Rucha Bhalchandra Joshi and Annada Prasad Behera and Subhankar Mishra},
-  journal={2022 IEEE 7th International Energy Conference (ENERGYCON)},
+  journal={2022 IEEE 7th International Energy Conference (ENERGYCON 2022)},
   year={2022},
   pages={1-8},
   url={https://api.semanticscholar.org/CorpusID:248986929},
@@ -432,7 +471,7 @@ doi={https://doi.org/10.48550/arXiv.2111.09314}
 @inproceedings{joshi2022edge,
   title={Edge-level privacy in graph neural networks},
   author={Joshi, Rucha Bhalchandra and Mishra, Subhankar},
-  booktitle={18th International Workshop on Mining and Learning with Graphs},
+  booktitle={18th International Workshop on Mining and Learning with Graphs (MLG 2022)},
   year={2022},
   pdf={https://openreview.net/forum?id=TU0UEnfcO88}
 }
@@ -440,7 +479,7 @@ doi={https://doi.org/10.48550/arXiv.2111.09314}
 @inproceedings{joshi2023graphs,
   title={Graphs: Privacy and generation through ML},
   author={Joshi, Rucha Bhalchandra},
-  booktitle={Proceedings of the Sixteenth ACM International Conference on Web Search and Data Mining},
+  booktitle={Proceedings of the Sixteenth ACM International Conference on Web Search and Data Mining (WSDM 2023)},
   pages={1216--1217},
   year={2023},
   pdf={https://dl.acm.org/doi/10.1145/3539597.3572987}
@@ -450,7 +489,7 @@ doi={https://doi.org/10.48550/arXiv.2111.09314}
 @article{joshi2024locally,
   title={Locally and structurally private graph neural networks},
   author={Joshi, Rucha Bhalchandra and Mishra, Subhankar},
-  journal={Digital Threats: Research and Practice},
+  journal={Digital Threats: Research and Practice (ACM DTRAP)},
   volume={5},
   number={1},
   pages={1--23},
@@ -463,7 +502,7 @@ doi={https://doi.org/10.48550/arXiv.2111.09314}
 @article{joshi2024graphprivatizer,
   title={GraphPrivatizer: Improved Structural Differential Privacy for Graph Neural Networks},
   author={Joshi, Rucha Bhalchandra and Indri, Patrick and Mishra, Subhankar},
-  journal={Transactions on Machine Learning Research},
+  journal={Transactions on Machine Learning Research (TMLR)},
   year={2024},
   pdf={https://openreview.net/forum?id=lcPtUhoGYc}
 }
@@ -471,7 +510,7 @@ doi={https://doi.org/10.48550/arXiv.2111.09314}
 @inproceedings{mukhopadhyay2025transformers,
   title={Transformers at a fraction},
   author={Mukhopadhyay, Aritra and Joshi, Rucha Bhalchandra and Tiwari, Nidhi and Mishra, Subhankar},
-  booktitle={Proceedings of the 6th Northern Lights Deep Learning Conference (NLDL)},
+  booktitle={Proceedings of the 6th Northern Lights Deep Learning Conference (NLDL 2025)},
   pages={193--203},
   year={2025},
   organization={PMLR},
@@ -481,7 +520,7 @@ doi={https://doi.org/10.48550/arXiv.2111.09314}
 @inproceedings{joshi2025graph,
   title={Graph Neural Networks at a fraction},
   author={Joshi, Rucha Bhalchandra and Barad, Sagar Prakash and Tiwari, Nidhi and Mishra, Subhankar},
-  booktitle={The 29th Pacific-Asia Conference on Knowledge Discovery and Data Mining},
+  booktitle={The 29th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2025)},
   year={2025},
   pdf={https://dl.acm.org/doi/10.1007/978-981-96-8173-0_23},
   doi={10.1007/978-981-96-8173-0_23}
@@ -490,7 +529,7 @@ doi={https://doi.org/10.48550/arXiv.2111.09314}
 @INPROCEEDINGS{11391783,
   author={Das, Rishav and Mohanty, Sikta and Joshi, Rucha Bhalchandra and Mishra, Subhankar},
   title={Label Informativeness-Based Minority Oversampling in Graphs (LIMO)}, 
-  booktitle={2025 IEEE International Conference on Knowledge Graph (ICKG)}, 
+  booktitle={IEEE International Conference on Knowledge Graph (ICKG 2025)}, 
   year={2025},
   volume={},
   number={},
@@ -503,7 +542,7 @@ doi={https://doi.org/10.48550/arXiv.2111.09314}
 @InProceedings{pmlr-v307-ansad26a,
   title = 	 {HetGSMOTE: Oversampling for Heterogeneous Graphs},
   author =       {Ansad, Adhilsha and Singh, Deependra and Joshi, Rucha Bhalchandra and Mishra, Subhankar},
-  booktitle = 	 {Proceedings of the 7th Northern Lights Deep Learning Conference (NLDL)},
+  booktitle = 	 {Proceedings of the 7th Northern Lights Deep Learning Conference (NLDL 2026)},
   pages = 	 {1--14},
   year = 	 {2026},
   editor = 	 {Kim, Hyeongji and Ramírez Rivera, Adín and Ricaud, Benjamin},
@@ -531,6 +570,7 @@ function parseBibtex(text){
       author:get('author'),
       year:get('year'),
       booktitle:get('booktitle'),
+      journal:get('journal'),
       topic:get('keywords'),
       abstract:get('abstract'),
       pdf:get('pdf'),
@@ -572,12 +612,13 @@ function renderPubs(filter='all'){
       doiLink ? `<a href="${doiLink}" target="_blank">DOI</a>` : ''
     ].filter(Boolean).join('');
 
+    const venue = p.journal ? p.journal : p.booktitle;
     const div = document.createElement('div');
     div.className='paper';
     div.innerHTML=`
       <strong>${p.title}</strong><br>
       <span>${p.author} · ${p.year}</span>
-      ${p.booktitle ? '<br><em>' + p.booktitle + '</em>' : ''}
+      ${venue ? '<br><em>' + venue + '</em>' : ''}
       ${actionLinks ? `<div class="actions">${actionLinks}</div>` : ''}
       <div class="details">${p.abstract}</div>
     `;
